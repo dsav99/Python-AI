@@ -20,6 +20,9 @@ language_translator.set_service_url('https://api.us-east.language-translator.wat
 
 def englishToFrench(englishText):
     #Code
+    englishText=englishText.strip()
+    if(englishText==''):
+        return ''
     frenchText = language_translator.translate(
         text=englishText,
         model_id='en-fr').get_result();
@@ -28,6 +31,9 @@ def englishToFrench(englishText):
 
 
 def frenchToEnglish(frenchText):
+    frenchText=frenchText.strip()
+    if(frenchText==''):
+        return ''
     englishText = language_translator.translate(
         text=frenchText,
         model_id='fr-en').get_result();
